@@ -23,7 +23,7 @@ If you train 'model A' in traditional data parallel style,
 If you train 'model A' and 3 more variant such as 'model A1', 'model A2', 'model A3',
 * Imagine 4 gpus can train your 4 models in 3 days
 
-...and if you're gonna check results at monday, you would able to compare 4 models at once when you chose to parallelize task (experiment)
+...and if you're gonna check results at monday, you would be able to compare 4 models at once when you chose to parallelize task (experiment)
 
 ### Different scenarios
 
