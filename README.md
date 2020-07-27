@@ -18,6 +18,7 @@ The concept [task parallelism](https://en.wikipedia.org/wiki/Task_parallelism) i
 
 If you train 'model A' in traditional data parallel style,
 * Imagine 4 gpus can train your model in about 1 day if everything worked very well.
+* If you stop training at designated duration or epochs, you can program to train different model variants when the first one is over. However you cannot check their progress at once.
 
 If you train 'model A' and 3 more variant such as 'model A1', 'model A2', 'model A3',
 * Imagine 4 gpus can train your 4 models in 3 days
@@ -73,11 +74,11 @@ if __name__ == "__main__":
 # You can use terminal multiplexer to manage your training sessions
 # CAUTION: DO NOT EXECUTE EVERYTHING AT ONCE,
 # WAIT FOR THE APPLICATION TO ALLOCATE THEIR MEMORY AND START UTILIZING GPU
-python model_a/train.py model_a/configs/experiment_01.yaml
+python model_a/train.py model_a/configs/experiment_01.yaml &
 sleep 5
-python model_a/train.py model_a/configs/experiment_02.yaml
+python model_a/train.py model_a/configs/experiment_02.yaml &
 sleep 5
-python model_b/train.py model_b/configs/experiment_01.yaml
+python model_b/train.py model_b/configs/experiment_01.yaml &
 sleep 5
-python model_b/train.py model_b/configs/experiment_02.yaml
+python model_b/train.py model_b/configs/experiment_02.yaml &
 ```
