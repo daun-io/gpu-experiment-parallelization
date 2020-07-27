@@ -2,7 +2,9 @@
 
 [한국어](https://nyanye.com/gpu/2020/07/27/multi-gpu/)
 
-Sometimes it is tough to implement your model to efficiently utilize multi-gpu environments using [data parallelism](https://pytorch.org/tutorials/beginner/blitz/data_parallel_tutorial.html) and [model parallelism](https://github.com/kakaobrain/torchgpipe). When your code is mixed with multiple versions of deeplearning framework's API such as TensorFlow v1 compatible apis and TensorFlow v2 compatible apis the code is really fragile and official parallelization practices doesn't simply work right away. For some deeplearning practices we eventually spend more time to implement it in parallel way since the time is also an expensive resource, however we can't just let residual GPUs idle forever.
+Sometimes it is tough to implement your model to efficiently utilize multi-gpu environments using [data parallelism](https://pytorch.org/tutorials/beginner/blitz/data_parallel_tutorial.html) and [model parallelism](https://github.com/kakaobrain/torchgpipe). When your code is mixed with multiple versions of deeplearning framework's API such as TensorFlow v1 compatible apis and TensorFlow v2 compatible apis the code is really fragile and official parallelization practices doesn't simply work right away. For some deeplearning practices we eventually spend more time to implement it in parallel way.
+
+The time is also an expensive resource, however we can't just let residual GPUs idle forever.
 
 The concept [task parallelism](https://en.wikipedia.org/wiki/Task_parallelism) is also a great choice for gpu experiments and it is commonly favored for many reasons.
 
